@@ -14,12 +14,25 @@ students = [
   "Norman Bates"
     ]
 # prints the title of the directory
-puts "The students of Villain Academy"
-puts "-------------"
-# prints the list of students
-students.each do |student|
-  puts student
+def print_header
+  puts "The students of Villain Academy"
+  puts "-------------"
 end
+
+# prints the list of students
+def print(students)
+  students.each do |student|
+    puts student
+  end
+end
+
 # prints the total number of students
-puts "Overall, we have #{students.count} great students"
+def print_footer(students)
+  puts "Overall, we have #{students.count} great students"
+end
 # it's important that print() doesn't add new line characters
+
+# nothing happens until we call the methods
+print_header
+print(students)
+print_footer(students)
