@@ -1,5 +1,6 @@
 
 def interactive_menu
+  students = []
   loop do
   # 1. print the menu and the user what to do
     puts "1. Input the students"
@@ -9,24 +10,21 @@ def interactive_menu
     selection = gets.chomp
   # 3. do what the user has asked
     case selection
-      when "1"
+    when "1"
         # input the students
-      when "2"
+        students = input_students
+    when "2"
         # show the students
-      when "9"
+        print_header
+        print(students)
+        print_footer(students)
+    when "9"
         exit # this will cause the program to terminate
-      else
+    else
         puts "I don't know what you meant, try again"
     end
   # 4. repeat from step 1
-  
-  count = 1
-  
-  while count <= 10
-    puts "s"
-    count = count + 1
   end
-  
 end
 
 def input_students
@@ -68,7 +66,4 @@ end
 # it's important that print() doesn't add new line characters
 
 # nothing happens until we call the methods
-students = input_students
-print_header
-print(students)
-print_footer(students)
+interactive_menu
